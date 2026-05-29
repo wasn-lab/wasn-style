@@ -1,6 +1,4 @@
 %%======== Pckage options and base class ========
-%\newboolean{logo}
-
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{wasn}
 \LoadClassWithOptions{article}
@@ -21,8 +19,8 @@
 \RequirePackage[latin, english]{babel}
 \RequirePackage{lipsum}
 \RequirePackage{etoolbox}
-\RequirePackage{fancyhdr}  % custom headers/footers
-\RequirePackage{ulem}  % 引用下划线
+\RequirePackage{fancyhdr}
+\RequirePackage{ulem}
 \DisableLigatures[f]{family=sf*} 
 \RequirePackage{graphicx}
 \RequirePackage{subcaption}
@@ -33,9 +31,9 @@
 \newcommand{\nm}[1]{#1}
 \RequirePackage[most]{tcolorbox}
 \RequirePackage{xcolor}
-\definecolor{wasnbg}{HTML}{50B0DE}
-\definecolor{wasnblue}{HTML}{50B0DE}
-\newcommand{\wasnblue}[1]{{\bfseries\color[HTML]{50B0DE} #1}} 
+\definecolor{wasnbg}{HTML}{0D2899}
+\definecolor{wasnblue}{HTML}{0D2899}
+\newcommand{\wasnblue}[1]{{\bfseries\color[HTML]{0D2899} #1}} 
 
 % References %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -57,7 +55,6 @@
 }
 
 \RequirePackage[numbers, sort&compress]{natbib}
-%\RequirePackage[round,authoryear]{natbib}
 \def\bibfont{\small}
 
 %%========  Bibliography using bibtex ========
@@ -92,30 +89,56 @@
 \captionsetup[sub]{singlelinecheck=true,format=custom,labelsep=custom,font=small}
 
 \RequirePackage[T1]{fontenc}
-\DeclareFontFamily{T1}{notosans}{}
-\DeclareFontShape{T1}{notosans}{ul}{n}{<-> s*[1] fonts/notosans_thin}      {}% Thin
-\DeclareFontShape{T1}{notosans}{el}{n}{<-> s*[1] fonts/notosans_extralight}{}% ExtraLight
-\DeclareFontShape{T1}{notosans}{l} {n}{<-> s*[1] fonts/notosans_light}     {}% Light
-\DeclareFontShape{T1}{notosans}{m} {n}{<-> s*[1] fonts/notosans_regular}   {}% Regular
-\DeclareFontShape{T1}{notosans}{mb}{n}{<-> s*[1] fonts/notosans_medium}    {}% Medium
-\DeclareFontShape{T1}{notosans}{sb}{n}{<-> s*[1] fonts/notosans_semibold}  {}% SemiBold
-\DeclareFontShape{T1}{notosans}{b} {n}{<-> s*[1] fonts/notosans_bold}      {}% Bold
-\DeclareFontShape{T1}{notosans}{bx}{n}{<-> s*[1] fonts/notosans_bold}      {}% \bfseries
-\DeclareFontShape{T1}{notosans}{eb}{n}{<-> s*[1] fonts/notosans_extrabold} {}% ExtraBold
-\DeclareFontShape{T1}{notosans}{ub}{n}{<-> s*[1] fonts/notosans_black}     {}% Black
+\RequirePackage{lmodern}
 
-\pdfmapline{+notosans_thin       < fonts/NotoSans-Thin.ttf       <T1-WGL4.enc}
-\pdfmapline{+notosans_extralight < fonts/NotoSans-ExtraLight.ttf <T1-WGL4.enc}
-\pdfmapline{+notosans_light      < fonts/NotoSans-Light.ttf      <T1-WGL4.enc}
-\pdfmapline{+notosans_regular    < fonts/NotoSans-Regular.ttf    <T1-WGL4.enc}
-\pdfmapline{+notosans_medium     < fonts/NotoSans-Medium.ttf     <T1-WGL4.enc}
-\pdfmapline{+notosans_semibold   < fonts/NotoSans-SemiBold.ttf   <T1-WGL4.enc}
-\pdfmapline{+notosans_bold       < fonts/NotoSans-Bold.ttf       <T1-WGL4.enc}
-\pdfmapline{+notosans_extrabold  < fonts/NotoSans-ExtraBold.ttf  <T1-WGL4.enc}
-\pdfmapline{+notosans_black      < fonts/NotoSans-Black.ttf      <T1-WGL4.enc}
+\DeclareFontFamily{T1}{geistsans}{}
+\DeclareFontShape{T1}{geistsans}{ul}{n}{<-> s*[1] fonts/geistsans/geistsans_thin}      {}% Thin
+\DeclareFontShape{T1}{geistsans}{el}{n}{<-> s*[1] fonts/geistsans/geistsans_extralight}{}% ExtraLight
+\DeclareFontShape{T1}{geistsans}{l} {n}{<-> s*[1] fonts/geistsans/geistsans_light}     {}% Light
+\DeclareFontShape{T1}{geistsans}{m} {n}{<-> s*[1] fonts/geistsans/geistsans_regular}   {}% Regular
+\DeclareFontShape{T1}{geistsans}{mb}{n}{<-> s*[1] fonts/geistsans/geistsans_medium}    {}% Medium
+\DeclareFontShape{T1}{geistsans}{sb}{n}{<-> s*[1] fonts/geistsans/geistsans_semibold}  {}% SemiBold
+\DeclareFontShape{T1}{geistsans}{b} {n}{<-> s*[1] fonts/geistsans/geistsans_bold}      {}% Bold
+\DeclareFontShape{T1}{geistsans}{bx}{n}{<-> s*[1] fonts/geistsans/geistsans_bold}      {}% \bfseries
+\DeclareFontShape{T1}{geistsans}{eb}{n}{<-> s*[1] fonts/geistsans/geistsans_extrabold} {}% ExtraBold
+\DeclareFontShape{T1}{geistsans}{ub}{n}{<-> s*[1] fonts/geistsans/geistsans_black}     {}% Black
 
-\renewcommand{\sfdefault}{notosans}%
-\renewcommand{\rmdefault}{cmr}
+\pdfmapline{+geistsans_thin       < fonts/geistsans/Geist-Thin.ttf       <T1-WGL4.enc}
+\pdfmapline{+geistsans_extralight < fonts/geistsans/Geist-ExtraLight.ttf <T1-WGL4.enc}
+\pdfmapline{+geistsans_light      < fonts/geistsans/Geist-Light.ttf      <T1-WGL4.enc}
+\pdfmapline{+geistsans_regular    < fonts/geistsans/Geist-Regular.ttf    <T1-WGL4.enc}
+\pdfmapline{+geistsans_medium     < fonts/geistsans/Geist-Medium.ttf     <T1-WGL4.enc}
+\pdfmapline{+geistsans_semibold   < fonts/geistsans/Geist-SemiBold.ttf   <T1-WGL4.enc}
+\pdfmapline{+geistsans_bold       < fonts/geistsans/Geist-Bold.ttf       <T1-WGL4.enc}
+\pdfmapline{+geistsans_extrabold  < fonts/geistsans/Geist-ExtraBold.ttf  <T1-WGL4.enc}
+\pdfmapline{+geistsans_black      < fonts/geistsans/Geist-Black.ttf      <T1-WGL4.enc}
+
+\DeclareFontFamily{T1}{geistmono}{}
+\DeclareFontShape{T1}{geistmono}{ul}{n}{<-> s*[1] fonts/geistmono/geistmono_thin}      {}% Thin
+\DeclareFontShape{T1}{geistmono}{el}{n}{<-> s*[1] fonts/geistmono/geistmono_extralight}{}% ExtraLight
+\DeclareFontShape{T1}{geistmono}{l} {n}{<-> s*[1] fonts/geistmono/geistmono_light}     {}% Light
+\DeclareFontShape{T1}{geistmono}{m} {n}{<-> s*[1] fonts/geistmono/geistmono_regular}   {}% Regular
+\DeclareFontShape{T1}{geistmono}{mb}{n}{<-> s*[1] fonts/geistmono/geistmono_medium}    {}% Medium
+\DeclareFontShape{T1}{geistmono}{sb}{n}{<-> s*[1] fonts/geistmono/geistmono_semibold}  {}% SemiBold
+\DeclareFontShape{T1}{geistmono}{b} {n}{<-> s*[1] fonts/geistmono/geistmono_bold}      {}% Bold
+\DeclareFontShape{T1}{geistmono}{bx}{n}{<-> s*[1] fonts/geistmono/geistmono_bold}      {}% \bfseries
+\DeclareFontShape{T1}{geistmono}{eb}{n}{<-> s*[1] fonts/geistmono/geistmono_extrabold} {}% ExtraBold
+\DeclareFontShape{T1}{geistmono}{ub}{n}{<-> s*[1] fonts/geistmono/geistmono_black}     {}% Black
+
+\pdfmapline{+geistmono_thin       < fonts/geistmono/GeistMono-Thin.ttf       <T1-WGL4.enc}
+\pdfmapline{+geistmono_extralight < fonts/geistmono/GeistMono-ExtraLight.ttf <T1-WGL4.enc}
+\pdfmapline{+geistmono_light      < fonts/geistmono/GeistMono-Light.ttf      <T1-WGL4.enc}
+\pdfmapline{+geistmono_regular    < fonts/geistmono/GeistMono-Regular.ttf    <T1-WGL4.enc}
+\pdfmapline{+geistmono_medium     < fonts/geistmono/GeistMono-Medium.ttf     <T1-WGL4.enc}
+\pdfmapline{+geistmono_semibold   < fonts/geistmono/GeistMono-SemiBold.ttf   <T1-WGL4.enc}
+\pdfmapline{+geistmono_bold       < fonts/geistmono/GeistMono-Bold.ttf       <T1-WGL4.enc}
+\pdfmapline{+geistmono_extrabold  < fonts/geistmono/GeistMono-ExtraBold.ttf  <T1-WGL4.enc}
+\pdfmapline{+geistmono_black      < fonts/geistmono/GeistMono-Black.ttf      <T1-WGL4.enc}
+
+
+\renewcommand{\sfdefault}{geistsans}% sans-serif  → Geist Sans
+\renewcommand{\ttdefault}{geistmono}% typewriter  → Geist Mono
+\renewcommand{\rmdefault}{lmr}      % serif       → Computer Modern
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -141,7 +164,7 @@
 
 \newcommand\affiliationlist{}
 \newcommand\affiliationformat[2][]{
-    {\affiliationfont{\fontfamily{notosans}\fontseries{mb}\selectfont $^{#1}$#2}}
+    {\affiliationfont{\fontfamily{geistsans}\fontseries{mb}\selectfont $^{#1}$#2}}
 }
 \newcommand\affiliation[2][]{\addtolist[#1]{#2}{\affiliationlist}{\affiliationformat}{, }}
 
@@ -163,7 +186,16 @@
 {\fontsize{10}{12}\selectfont} 
 
 \renewcommand{\abstract}[1]{\def\abstractlist{{\abstractinfont #1}}}
-\newcommand{\email}[1]{\href{mailto:#1}{\texttt{#1}}}
+
+%%======== Monospace (Geist Mono) helpers ========
+% \ttdefault 已設為 geistmono，故 \texttt / \url / \code 均使用 Geist Mono
+\AtBeginDocument{\urlstyle{tt}}      % 讓 \url, \nolinkurl 使用 mono 字體
+\newcommand{\code}[1]{\texttt{#1}}   % 行內程式碼
+\newcommand{\codeurl}[1]{\href{#1}{\nolinkurl{#1}}}        % 可點擊的 mono URL
+\newcommand{\codelink}[1]{\checkdata[Code]{\codeurl{#1}}}  % 標題資訊區的 Code 欄
+
+% \newcommand{\email}[1]{\href{mailto:#1}{\texttt{#1}}}    % 原始版本
+\newcommand{\email}[1]{\href{mailto:#1}{\nolinkurl{#1}}}
 
 \renewcommand\date[1]{\checkdata[Date]{#1}}
 \newcommand\correspondence[1]{\checkdata[Correspondence]{#1}}
@@ -205,28 +237,22 @@
 \newcommand{\@toptitlebar}{
   \wasnblue{\hrule height 0.5pt }
   \vskip 6mm
-  %\vskip -\parskip%
 }
 \newcommand{\@bottomtitlebar}{
   \vskip 6mm
-  %\vskip -\parskip
   \wasnblue{\hrule height 0.5pt}
-  %\vskip 0.09in%
 }
 
 % Titlebox %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\mymaketitle}{%
-  %\tcbset{enhanced,frame hidden}
   \tcbset{enhanced}
   \tcbset{left=8mm}
   \tcbset{right=8mm}
   \tcbset{top=6mm}
   \tcbset{bottom=6mm}
   \tcbset{colback=white}  
-  % 框线颜色
-  \tcbset{colframe=wasnbg} 
-  % 调整框线粗细
+  \tcbset{colframe=wasnbg}
   \tcbset{boxrule=0.5pt} 
   \tcbset{before skip=0pt}
   \tcbset{grow to left by=1.5pt}
@@ -278,7 +304,6 @@
   \tcbset{reset}
   \FloatBarrier
 
-  %加入页眉页脚
   \thispagestyle{firststyle}
 
 }
@@ -295,6 +320,5 @@
 \renewcommand{\maketitle}{
   \mymaketitle
   \vskip 8mm
-  %\setlength{\parskip}{4mm}
 }%
 \fi
