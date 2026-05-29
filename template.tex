@@ -5,15 +5,122 @@
 \usepackage[toc,page,header]{appendix}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+% Silence warnings
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{silence}
 \WarningFilter{latex}{Command \showhyphens}
-\usepackage{amssymb}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Math
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsthm}
+\usepackage{nicefrac}
+\usepackage{mathrsfs}
+\usepackage{dsfont}
+\usepackage{upgreek}
+\usepackage{bbm}
+\usepackage{gensymb}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Algorithms and code
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{listings}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Tables and layout
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{array}
+\usepackage{makecell}      % loaded once only (was duplicated)
 \usepackage{multirow}
-\usepackage{makecell}
+\usepackage{adjustbox}
+\usepackage{tabularx}
+\usepackage{diagbox}
+\usepackage{longtable}
+\usepackage{siunitx}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{enumitem}
 
-%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Symbols, text, misc
+% Note: do NOT load `url` here; hyperref (from wasn.cls) already provides \url.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{pifont}
+\usepackage{fontawesome5}
+\usepackage{bbding}
+\usepackage{textcomp}
+\usepackage{xspace}
+\usepackage{epigraph}
+\usepackage{comment}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Table helpers
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newlength\savewidth
+\newcommand\shline{\noalign{\global\savewidth\arrayrulewidth \global\arrayrulewidth 1pt}\hline\noalign{\global\arrayrulewidth\savewidth}}
+\newcommand{\tablestyle}[2]{\setlength{\tabcolsep}{#1}\renewcommand{\arraystretch}{#2}\centering\footnotesize}
+
+\newcolumntype{x}[1]{>{\centering\arraybackslash}p{#1pt}}
+\newcolumntype{y}[1]{>{\raggedright\arraybackslash}p{#1pt}}
+\newcolumntype{z}[1]{>{\raggedleft\arraybackslash}p{#1pt}}
+
+\setlength{\abovecaptionskip}{1pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% THEOREMS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Assumption}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Code listing style
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{codeblue}{rgb}{0.25, 0.5, 0.5}
+\definecolor{codekw}{rgb}{0.35, 0.35, 0.75}
+\lstdefinestyle{Pytorch}{
+    language        = Python,
+    backgroundcolor = \color{white},
+    basicstyle      = \fontsize{9pt}{8pt}\selectfont\ttfamily\bfseries,
+    columns         = fullflexible,
+    aboveskip       = 1pt,
+    belowskip       = 1pt,
+    breaklines      = true,
+    captionpos      = b,
+    commentstyle    = \color{codeblue},
+    keywordstyle    = \color{codekw},
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Up/down markers
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{goodgreen}{HTML}{009000}
+\definecolor{badred}{HTML}{ea4335}
+\newcommand{\better}[1]{\textcolor{goodgreen}{$\uparrow\,$#1}}
+\newcommand{\worse}[1]{\textcolor{badred}{$\downarrow\,$#1}}
+\newcommand{\betterinv}[1]{\textcolor{goodgreen}{$\downarrow\,$#1}}
+\newcommand{\worseinv}[1]{\textcolor{badred}{$\uparrow\,$#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Math shorthands
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\eu}{\mathrm{e}\mkern1mu}
+\newcommand{\ramuno}{\mathrm{i}\mkern1mu}
+\newcommand{\diff}{\mathop{}\!\mathrm{d}}
+\DeclareMathOperator{\sinc}{sinc}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Title and metadata
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \title{Template for Preprints with WASN-Style}
 
 \author[1]{Author1}
